@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --dark: #29251f;
+    --brown: #805b43;
+    --cream: #f8f5ef;
+    --white: #ffffff;
+    --muted: #827b72;
+    --border: #e8e1d7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    background: var(--white);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.brand span, .hero h1 span {
+    color: var(--brown);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-button, .primary-btn {
+    display: inline-block;
+    background: var(--brown);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+.hero {
+    background: #e9dfd1;
+    padding: 75px 40px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 35px 0 55px;
+}
+
+.eyebrow {
+    color: var(--brown);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero h1, .form-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    margin-bottom: 12px;
+}
+
+.hero > p:not(.eyebrow) {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.menu-section {
+    margin-bottom: 70px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+}
+
+.menu-count {
+    color: var(--muted);
+}
+
+.filter-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-form select, .form-card input,
+.form-card select, .form-card textarea {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font: inherit;
+    background: white;
+}
+
+.filter-btn, .reset-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.filter-btn {
+    background: var(--dark);
+    color: white;
+}
+
+.reset-btn {
+    background: #e9e3da;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.menu-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(41, 37, 31, 0.10);
+}
+
+.menu-image {
+    width: 100%;
+    height: 190px;
+    min-height: 190px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #e9dfd1;
+    padding: 12px;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.menu-image > span {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    background: #ffffff;
+    color: #29251f;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.coffee-icon {
+    font-size: 65px;
+}
+
+/* Menyamakan posisi isi kartu */
+.menu-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+}
+
+.menu-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+.menu-info > p {
+    min-height: 45px;
+}
+
+.menu-bottom {
+    margin-top: auto;
+}
+
+.menu-bottom strong {
+    color: var(--brown);
+}
+
+.detail-btn {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.card-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.card-actions a {
+    color: #426b91;
+}
+
+.card-actions form {
+    margin: 0;
+}
+
+.delete-btn {
+    border: none;
+    background: none;
+    color: #bd4545;
+    cursor: pointer;
+    font: inherit;
+}
+
+.empty-state {
+    background: white;
+    padding: 45px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.detail-section, .form-section {
+    padding: 40px 0 70px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--brown);
+    margin-bottom: 22px;
+}
+
+.detail-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detail-image {
+    height: 100%;
+    min-height: 350px;
+    font-size: 100px;
+}
+
+.detail-content {
+    padding: 40px;
+}
+
+.detail-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+}
+
+.detail-content h2 {
+    color: var(--brown);
+    margin: 18px 0;
+}
+
+.description {
+    margin: 30px 0;
+}
+
+.description p, .menu-id {
+    color: var(--muted);
+}
+
+.form-card {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.form-description {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-card label {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.form-card input, .form-card select,
+.form-card textarea {
+    width: 100%;
+}
+
+.form-submit {
+    margin-top: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: white;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-image {
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+
+    .nav-button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+}
+
+.detail-image {
+    overflow: hidden;
+}
+
+.detail-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .menu-info {
+        padding: 14px;
+    }
+
+    .menu-info h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .detail-content {
+        padding: 22px;
+    }
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.menu-card {
+    min-width: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 4%;
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 22px;
+        flex-shrink: 0;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-button {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}

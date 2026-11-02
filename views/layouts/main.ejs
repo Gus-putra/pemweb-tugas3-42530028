@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> | CafeMenu</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="brand">Cafe<span>Menu.</span></a>
+        <div class="nav-links">
+            <a href="/">Beranda</a>
+            <a href="/menus/tambah" class="nav-button">+ Tambah Menu</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <%- include('../' + page) %>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 CafeMenu. Fresh Coffee, Good Mood.</p>
+    </footer>
+
+</body>
+</html>

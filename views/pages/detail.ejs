@@ -1,0 +1,29 @@
+<section class="detail-section">
+    <a href="/" class="back-link">← Kembali ke Menu</a>
+
+    <div class="detail-image">
+    <img
+        src="/images/<%= menu.foto %>"
+        alt="<%= menu.nama_menu %>"
+    >
+    </div>  
+
+        <div class="detail-content">
+            <p class="eyebrow"><%= menu.kategori %></p>
+            <h1><%= menu.nama_menu %></h1>
+
+            <h2>Rp <%= Number(menu.harga).toLocaleString('id-ID') %></h2>
+
+            <div class="description">
+                <h3>Deskripsi Menu</h3>
+                <p><%= menu.deskripsi || 'Belum ada deskripsi.' %></p>
+            </div>
+
+            <p class="menu-id">Menu ID: #<%= menu.id %></p>
+
+            <a href="/menus/<%= menu.id %>/edit" class="primary-btn">
+                Edit Menu
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,74 @@
+<section class="hero">
+    <p class="eyebrow">WELCOME TO CAFEMENU</p>
+    <h1>Good Food, <span>Good Mood.</span></h1>
+    <p>Temukan makanan dan minuman favoritmu di sini.</p>
+    <a href="/menus/tambah" class="primary-btn">+ Tambah Menu</a>
+</section>
+
+<section class="menu-section">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Menu Pilihan</h2>
+        </div>
+        <span class="menu-count"><%= menus.length %> Menu</span>
+    </div>
+
+    <form action="/" method="GET" class="filter-form">
+        <select name="kategori">
+            <option value="">Semua Kategori</option>
+            <% kategoriList.forEach(item => { %>
+                <option value="<%= item %>" <%= kategori === item ? 'selected' : '' %>>
+                    <%= item %>
+                </option>
+            <% }) %>
+        </select>
+        <button type="submit" class="filter-btn">Filter</button>
+        <a href="/" class="reset-btn">Reset</a>
+    </form>
+
+    <% if (menus.length === 0) { %>
+        <div class="empty-state">
+            <h3>Menu belum tersedia</h3>
+            <p>Coba pilih kategori lain atau tambahkan menu baru.</p>
+        </div>
+    <% } else { %>
+        <div class="menu-grid">
+            <% menus.forEach(menu => { %>
+                <article class="menu-card">
+                    <div class="menu-image">
+                        <img
+                            src="/images/<%= menu.foto %>"
+                            alt="<%= menu.nama_menu %>"
+                        >
+                        <span><%= menu.kategori %></span>
+                    </div>
+
+                    <div class="menu-info">
+                        <h3><%= menu.nama_menu %></h3>
+                        <p><%= menu.deskripsi || 'Menu spesial CafeMenu.' %></p>
+
+                        <div class="menu-bottom">
+                            <strong>Rp <%= Number(menu.harga).toLocaleString('id-ID') %></strong>
+                            <a href="/menu/<%= menu.id %>" class="detail-btn">
+                                Detail →
+                            </a>
+                        </div>
+
+                        <div class="card-actions">
+                            <a href="/menus/<%= menu.id %>/edit">Edit</a>
+
+                            <form action="/menus/<%= menu.id %>/delete"
+                                  method="POST"
+                                  onsubmit="return confirm('Yakin ingin menghapus menu ini?')">
+                                <button type="submit" class="delete-btn">
+                                    Hapus
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    <% } %>
+</section>
